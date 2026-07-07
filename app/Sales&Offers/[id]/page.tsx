@@ -28,7 +28,7 @@ export default function ProductPage({
         setProductIdStr(id); // ID state me save kar rahe hain submit handler ke liye
 
         // Fetch Product details
-        const res = await fetch(`http://localhost:3000/api/add-product/${id}`, {
+        const res = await fetch(`/api/add-product/${id}`, {
           cache: "no-store",
         });
         if (res.ok) {

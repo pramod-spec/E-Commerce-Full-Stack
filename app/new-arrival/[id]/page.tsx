@@ -26,7 +26,7 @@ export default function ProductPage({
         const productId = resolvedParams.id;
 
         // Fetch Product Details
-        const res = await fetch(`http://localhost:3000/api/add-product/${productId}`, {
+        const res = await fetch(`/api/add-product/${productId}`, {
           cache: "no-store",
         });
         if (res.ok) {

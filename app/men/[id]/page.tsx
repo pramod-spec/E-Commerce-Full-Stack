@@ -28,7 +28,7 @@ export default function ProductPage({ params }: PageProps) {
     const fetchProductDetails = async () => {
       try {
         // Fetch Product
-        const res = await fetch(`http://localhost:3000/api/add-product/${id}`, {
+        const res = await fetch(`/api/add-product/${id}`, {
           cache: "no-store",
         });
         if (res.ok) {
