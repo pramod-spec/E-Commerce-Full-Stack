@@ -26,7 +26,7 @@ export default function Navbar() {
         
         {/* 🏢 Logo */}
         <Link className="navbar-brand me-2" href="/">
-          <img src="/logo.PNG" alt="Logo" width="60" height="60" />
+          <img src="/logo.png" alt="Logo" width="60" height="60" />
         </Link>
 
         {/* ======================================================== */}
