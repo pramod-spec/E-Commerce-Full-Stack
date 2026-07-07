@@ -22,67 +22,58 @@ export default function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
-      <div className="container-fluid">
-        <Link className="navbar-brand" href="/">
+      <div className="container-fluid d-flex flex-wrap align-items-center justify-content-between">
+        
+        {/* 🏢 Logo */}
+        <Link className="navbar-brand me-2" href="/">
           <img src="/logo.PNG" alt="Logo" width="60" height="60" />
         </Link>
 
-        {/* 📱 Mobile Toggle Button */}
+        {/* ======================================================== */}
+        {/* 🔥 ALWAYS VISIBLE SEARCH BAR (Mobile aur Desktop dono par dikhega) */}
+        {/* ======================================================== */}
+        <form 
+          onSubmit={handleSearchSubmit} 
+          className="d-flex order-lg-2 mx-auto my-1" 
+          style={{ maxWidth: "500px", width: "100%", flex: "1 1 280px" }}
+        >
+          <div className="input-group shadow-sm rounded-pill overflow-hidden border border-secondary-subtle">
+            <input
+              type="text"
+              className="form-control border-0 ps-3 py-2"
+              placeholder="Search products..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              style={{ fontSize: "0.95rem", outline: "none" }}
+            />
+            <button 
+              type="submit" 
+              className="btn btn-primary px-3 border-0 d-flex align-items-center justify-content-center"
+            >
+              🔍
+            </button>
+          </div>
+        </form>
+
+        {/* 📱 Mobile Toggle Button (Ab isme sirf Links chhupenge, Search nahi) */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler order-lg-3 ms-2"
           type="button"
           onClick={() => setOpen(!open)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className={`${open ? "show" : ""} navbar-collapse collapse`}>
-          
-          {/* ======================================================== */}
-          {/* 🔥 NAVBAR KE BEECH MEIN INPUT SEARCH BOX                 */}
-          {/* ======================================================== */}
-          <form onSubmit={handleSearchSubmit} className="d-flex mx-auto my-2 my-lg-0" style={{ maxWidth: "320px", width: "100%" }}>
-            <div className="input-group shadow-sm rounded-pill overflow-hidden border border-secondary-subtle">
-              <input
-                type="text"
-                className="form-control border-0 ps-3 py-2"
-                placeholder="Search products..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                style={{ fontSize: "0.95rem", outline: "none" }}
-              />
-              <button 
-                type="submit" 
-                className="btn btn-primary px-3 border-0 d-flex align-items-center justify-content-center"
-              >
-                🔍
-              </button>
-            </div>
-          </form>
-
-          {/* 🔗 Right Side Links */}
+        {/* 🔗 Links Wrapper */}
+        <div className={`${open ? "show" : ""} navbar-collapse collapse order-lg-4`}>
           <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item">
               <Link className="nav-link" href="/HomePage">Home</Link>
             </li>
 
-            {/* <li className="nav-item">
-              <Link className="nav-link" href="/about">About</Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link" href="/contact">Contact Us</Link>
-            </li> */}
-
-            
-
             <li className="nav-item">
               <Link className="nav-link" href="/cart">Cart</Link>
             </li>
-
-            {/* <li className="nav-item">
-              <Link className="nav-link" href="/login">Login</Link>
-            </li> */}
 
             <li className="nav-item">
               <Link className="nav-link" href="/my-orders">My Orders</Link>
@@ -93,6 +84,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
   );
