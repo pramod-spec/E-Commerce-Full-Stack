@@ -25,9 +25,9 @@ export default function Navbar() {
       <div className="container-fluid d-flex flex-wrap align-items-center justify-content-between">
         
         {/* 🏢 Logo */}
-        <Link className="navbar-brand me-2" href="/">
+        {/* <Link className="navbar-brand me-2" href="/">
           <img src="/logo.png" alt="Logo" width="60" height="60" />
-        </Link>
+        </Link> */}
 
         {/* ======================================================== */}
         {/* 🔥 ALWAYS VISIBLE SEARCH BAR (Mobile aur Desktop dono par dikhega) */}
